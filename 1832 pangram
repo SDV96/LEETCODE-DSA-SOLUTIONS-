@@ -1,0 +1,47 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        // Create a frequency map for 26 letters
+        vector<int> hash(26, 0);
+        int n = sentence.length(); 
+
+        // FIX 1: Loop through the STRING, not through the alphabet 'a'-'z'
+        for(int i = 0; i < n; i++) {  //😎OR char &ch : sentence better with &x copy 
+            char ch = sentence[i];      //  int index = ch - 'a';
+                                        // hash[index] ++ ; or count 
+            
+            // Increment the count for this letter
+            // 'a' - 'a' = 0, 'b' - 'a' = 1, etc.
+            //    Math: 'c' - 'a' 
+
+//  99 - 97 = 2
+// Action: hash[2]++
+// Result: hash[2nd position array] becomes 0 to +1.
+// Current Hash: [0, 0, 1, 0, ...] (Box 'c' has one coin)
+            hash[ch - 'a']++; 
+        }
+
+        // 2. check after: Loop through the hash map
+        for(int j = 0; j < 26; j++) {
+            // FIX 2: Use '==' for comparison, not '=' (assignment)
+            if(hash[j] == 0) return false; 
+        }
+    
+        return true;
+    }
+};
+
+
+
+
+
+
+   //3 . pro flex  😎
+  
+//     // Put every character into a set (sets ignore duplicates)
+//     unordered_set<char> s(sentence.begin(), sentence.end());
+//     return s.size() == 26;
+
+
+//     }
+// };
