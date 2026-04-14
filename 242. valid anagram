@@ -1,0 +1,46 @@
+class Solution {
+public:                                  //2. when to use implement this core  concept  variation 
+    bool isAnagram(string s, string t) {  // 1. why? how ? each line DRy RUN DEBUG // virtual memory
+    //   if (s.size() != t.length()) return false;  // my error not writing lengt() bracket 
+    //   sort(s.begin(),s.end());
+    //   sort(t.begin(),t.end()); //simple
+    //    // now they are sorted can compare now
+    //   return s ==t ;     arr,arr+n metgod old 
+
+    //  approach2 : hash string  //inverntory method count== &  -- 
+        //if (s.size() != t.length()) {return false; }  // 👉base cASE ALWAYS 
+//         int hash[256] = {0} ; int count ; int i;
+//          for ( i=0; i<s.size(); i++) {
+//                   //
+//         }
+//         for (i=0; i<256; i++) {
+//             if (hash[i]!= 0) return false;  //check all [0,0,0,0]
+//         } 
+// return true;
+// }
+// };
+
+// approach 3: map inseert string then compare
+//       not int char because abcd                 int arr[]={10,20,} to be defined then only 
+//     set <char> set1(s.begin(),s.end());    // for arr to set > set <int> set(begin(arr),end(arr))
+//     set <char> set2(t.begin(),t.end());          for int (x:set) or for (char c : string)
+//     return set1 == set2; position not matter
+//     }
+// };   
+
+
+// approach 4:same  map (char : int )  key : value   use when no char range or in order or ...
+            map <char,int> map;
+          if (s.size() != t.length()) {return false; } 
+        //int hash[256] = {0} ; int count ; int i;
+            for ( int i=0; i<s.size(); i++) {
+            map[s[i]]++;         //
+            map[t[i]]--;            //
+        }
+        for (auto it : map) { // or can use auto &it as for (auto const& [key,count] : map) from notes 
+            if (it.second != 0) return false;  }// }
+return true;
+}
+};
+
+// 3.how to optimize 4. complexity at last.  why this much time taken 
