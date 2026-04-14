@@ -1,1 +1,40 @@
 https://leetcode.com/problem-list/string-matching/
+Here are 20 LeetCode problems categorized by difficulty and the string matching algorithms (KMP, Rabin-Karp, or sliding windows) typically used to solve them:
+Easy Problems
+1408. String Matching in an Array: Find which strings are substrings of others.
+459. Repeated Substring Pattern: Use the LPS (Longest Prefix Suffix) table logic from KMP to check for repeats.
+796. Rotate String: Check if one string is a rotation of another.
+2185. Counting Words With a Given Prefix: Simple prefix matching.
+2255. Count Prefixes of a Given String: Check if words are prefixes of a target.
+1967. Number of Strings That Appear as Substrings in Word: Standard pattern searching. 
+LeetCode
+LeetCode
+ +4
+Medium Problems
+28. Find the Index of the First Occurrence in a String: The classic "needle in a haystack" problem solved with KMP or Rabin-Karp.
+686. Repeated String Match: Find the minimum repetitions of 'a' to contain 'b'.
+187. Repeated DNA Sequences: Use Rabin-Karp (rolling hash) to find repeated 10-letter DNA sequences.
+1392. Longest Happy Prefix: Directly uses the LPS table to find the largest prefix that is also a suffix.
+2156. Find Substring With Given Hash Value: A direct application of the Rabin-Karp hash formula.
+1312. Minimum Insertion Steps to Make a String Palindrome: Often optimized with string matching/DP logic.
+30. Substring with Concatenation of All Words: Hashing/Sliding window for multiple patterns. 
+LeetCode
+LeetCode
+ +4
+Hard Problems
+214. Shortest Palindrome: Uses KMP to find the longest palindromic prefix.
+1044. Longest Duplicate Substring: Rabin-Karp + Binary Search for the longest repeating section.
+1147. Longest Chunked Palindrome Decomposition: Greedy matching using rolling hashes.
+336. Palindrome Pairs: Efficiently matching prefixes and suffixes to form palindromes.
+1397. Find All Good Strings: Advanced KMP combined with Digit DP.
+1923. Longest Common Subpath: Multiple Rabin-Karp hashes across different arrays.
+1367. Linked List in Binary Tree: Treat the tree path as a string and the list as a pattern using KMP. 
+LeetCode
+LeetCode
+ +4
+Matching Patterns to Algorithms
+If the problem mentions... 	Try this algorithm...
+"Substring", "Occurrences", "Pattern"	KMP or Rabin-Karp
+"Prefix which is also a Suffix"	LPS Table (KMP Preprocessing)
+"Duplicates", "Repeated chunks", "Hashes"	Rabin-Karp (Rolling Hash)
+"Prefix Tree", "Dictionary search"	Trie
